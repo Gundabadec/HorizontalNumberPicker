@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="HorizontalNumberPicker">
+        <attr name="minusValueColor" format="color" />
+        <attr name="plusValueColor" format="color" />
+        <attr name="valueColor" format="color" />
         <attr name="value" format="integer" />
         <attr name="minValue" format="integer" />
         <attr name="maxValue" format="integer" />

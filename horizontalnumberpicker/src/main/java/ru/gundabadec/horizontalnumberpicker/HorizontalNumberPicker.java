@@ -17,6 +17,10 @@ import android.widget.TextView;
 public class HorizontalNumberPicker extends LinearLayout {
     private final static int MIN_UPDATE_INTERVAL = 50;
 
+    private int valueColor;
+    private int minusValueColor;
+    private int plusValueColor;
+
     private int value;
     private int maxValue;
     private int minValue;
@@ -75,6 +79,11 @@ public class HorizontalNumberPicker extends LinearLayout {
 
         String buttonMinusText =
                 typedArray.getString(R.styleable.HorizontalNumberPicker_minusButtonText);
+        minusValueColor = typedArray.getColor(R.styleable.HorizontalNumberPicker_valueColor,
+                res.getColor(R.color.colorAccent));
+        plusValueColor = typedArray.getColor(R.styleable.HorizontalNumberPicker_valueColor,
+                res.getColor(R.color.colorAccent));
+
         initButtonMinus(
                 buttonMinusText != null ? buttonMinusText : res.getString(R.string.defaultButtonMinus));
 
@@ -89,6 +98,9 @@ public class HorizontalNumberPicker extends LinearLayout {
                 res.getInteger(R.integer.default_stepSize));
         showLeadingZeros = typedArray.getBoolean(R.styleable.HorizontalNumberPicker_showLeadingZeros,
                 res.getBoolean(R.bool.default_showLeadingZeros));
+
+        valueColor = typedArray.getColor(R.styleable.HorizontalNumberPicker_valueColor,
+                res.getColor(R.color.colorAccent));
 
         initTextValue();
         value = typedArray.getInt(R.styleable.HorizontalNumberPicker_value,
@@ -105,6 +117,7 @@ public class HorizontalNumberPicker extends LinearLayout {
 
     private void initTextValue() {
         textValue = (TextView) findViewById(R.id.text_value);
+        textValue.setTextColor(valueColor);
         textValue.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -121,6 +134,7 @@ public class HorizontalNumberPicker extends LinearLayout {
     private void initButtonPlus(String text) {
         buttonPlus = (Button) findViewById(R.id.button_plus);
         buttonPlus.setText(text);
+        buttonPlus.setTextColor(plusValueColor);
 
         buttonPlus.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -150,6 +164,7 @@ public class HorizontalNumberPicker extends LinearLayout {
     private void initButtonMinus(String text) {
         buttonMinus = (Button) findViewById(R.id.button_minus);
         buttonMinus.setText(text);
+        buttonMinus.setTextColor(minusValueColor);
 
         buttonMinus.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
