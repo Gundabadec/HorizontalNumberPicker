@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
 group = 'com.github.gundabadec'
-version = '0.0.2'
+version = '0.0.3'
 
 android {
     compileSdkVersion 25
@@ -11,7 +11,7 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 2
+        versionCode 3
         versionName version
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
