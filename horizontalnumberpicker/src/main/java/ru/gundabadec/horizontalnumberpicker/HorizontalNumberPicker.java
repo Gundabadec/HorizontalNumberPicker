@@ -79,9 +79,9 @@ public class HorizontalNumberPicker extends LinearLayout {
 
         String buttonMinusText =
                 typedArray.getString(R.styleable.HorizontalNumberPicker_minusButtonText);
-        minusValueColor = typedArray.getColor(R.styleable.HorizontalNumberPicker_valueColor,
+        minusValueColor = typedArray.getColor(R.styleable.HorizontalNumberPicker_minusValueColor,
                 res.getColor(R.color.colorAccent));
-        plusValueColor = typedArray.getColor(R.styleable.HorizontalNumberPicker_valueColor,
+        plusValueColor = typedArray.getColor(R.styleable.HorizontalNumberPicker_plusValueColor,
                 res.getColor(R.color.colorAccent));
 
         initButtonMinus(
